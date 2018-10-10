@@ -1,16 +1,18 @@
 <div class="container">
-  <div class="row d-flex justify-content-center text-center">
-  <div class="col-xs-12">
-    <form>
-      <div class="form-group">
-        <%= simple_form_for @article do |f| %>
-          <%= f.input :title, class: "form-control-lg" %>
-          <%= f.input :content, class: "form-control-lg" %>
-          <%= f.button :submit , class: "btn btn-primary" %>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <form style="position:relative; top:200px;">
+        <div class="brand_name"><h1 style="color:black;">How about you write down something cool ?</h1></div>
+        <%= form_for @article do |f| %>
+          <div class="form-group">
+          <%= f.text_field :title,placeholder: "Title", :class => "form-control" %>
+          </div>
+          <div class="form-group">
+          <%= f.text_area :content, {:class => "form-control", :rows => "6", placeholder: "Content"} %>
+          </div>
+          <%= f.submit :Save , class: "btn btn-block btn-primary" %>
         <% end %>
-      </div>
-   </form>
-   </div>
+    </form>
+    </div>
   </div>
 </div>
-

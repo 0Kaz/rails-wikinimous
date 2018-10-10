@@ -1,9 +1,15 @@
-<nav class="brand-bar">
-<h1>Wikinimous</h1>
+<div class="navbar">
+<h1 class="brand_name">Wikinimous</h1>
 <%= link_to "Create", new_article_path, class:"create_link" %>
-</nav>
+</div>
 
-<% @articles.each do |article| %>
-  <h1> <%= article.title %></h1>
-  <h2> <%= article.content %></h2>
-<% end %>
+<div class="container">
+  <div class="row article_row">
+    <div class="col-md-12 text-center">
+      <% @articles.each do |article| %>
+        <h1> <%= link_to article.title , article_path(article) %></h1>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+</div>
